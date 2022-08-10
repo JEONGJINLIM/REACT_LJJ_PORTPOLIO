@@ -1,9 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faEnvira } from '@fortawesome/free-brands-svg-icons';
 
 function Header() {
 	const active = { color: '#403730' };
@@ -11,7 +9,14 @@ function Header() {
 	return (
 		<header>
 			<h1>
-				<Link to='/'>LOGO</Link>
+				<Link to='/'>
+					<ul>
+						<li>
+							<FontAwesomeIcon icon={faEnvira} />
+							<h1>ECO DECODE</h1>
+						</li>
+					</ul>
+				</Link>
 			</h1>
 			<nav>
 				<ul id='gnb'>
