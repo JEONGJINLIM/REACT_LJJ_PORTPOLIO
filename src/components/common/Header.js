@@ -3,14 +3,14 @@ import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvira } from '@fortawesome/free-brands-svg-icons';
 
-function Header() {
+function Header({ type }) {
 	const active = { color: '#403730' };
 
 	return (
-		<header>
+		<header className={type}>
 			<h1>
 				<Link to='/'>
-					<ul>
+					<ul id='gnbL'>
 						<li>
 							<FontAwesomeIcon icon={faEnvira} />
 							<span>ECO DECODE</span>

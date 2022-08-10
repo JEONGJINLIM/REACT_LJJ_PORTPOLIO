@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 //common
 import Header from './components/common/Header';
@@ -21,12 +21,18 @@ import './scss/style.scss';
 function App() {
 	return (
 		<>
-			<Header />
-
-			<Route exact path='/'>
-				<Visual />
-				<Content />
-			</Route>
+			<Switch>
+				<Route exact path='/'>
+					<Header type={'main'} />
+					<Visual />
+					<Content />
+				</Route>{' '}
+				{/*메인페이지 라우터 설정 완료*/}
+				<Route path='/'>
+					<Header type={'sub'} />
+				</Route>
+				{/*서브페이지 라우터 설정 완료*/}
+			</Switch>
 
 			<Route path='/department' component={Department} />
 			<Route path='/community' component={Community} />
@@ -34,7 +40,6 @@ function App() {
 			<Route path='/youtube' component={Youtube} />
 			<Route path='/location' component={Location} />
 			<Route path='/members' component={Members} />
-
 			<Footer />
 		</>
 	);
