@@ -13,7 +13,7 @@ function Header() {
 					<ul>
 						<li>
 							<FontAwesomeIcon icon={faEnvira} />
-							<h1>ECO DECODE</h1>
+							<span>ECO DECODE</span>
 						</li>
 					</ul>
 				</Link>
