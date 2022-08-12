@@ -1,4 +1,4 @@
-function Footer() {
+function Footer(type) {
 	return <footer>2022 &copy; DECODELAB ALL rights reserved.</footer>;
 }
 
