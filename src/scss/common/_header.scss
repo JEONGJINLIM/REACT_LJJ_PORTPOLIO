@@ -6,7 +6,10 @@ header {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-content: center;
-
+	//background: linear-gradient(to top, #7cf7ff, #2ef0ac);
+	.inner {
+		background: linear-gradient(to top, #7cf7ff, #2ef0ac);
+	}
 	#gnbL {
 		width: 350px;
 

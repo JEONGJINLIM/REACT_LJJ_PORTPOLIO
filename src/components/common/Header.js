@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvira } from '@fortawesome/free-brands-svg-icons';
 
 function Header({ type }) {
-	const active = { color: '#403730' };
+	const active = { color: '#7BF02E' };
 
 	return (
 		<header className={type}>

@@ -5,18 +5,36 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background: linear-gradient(to top, #7cf7ff, #2ef0ac);
 
 	.upper {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		padding-right: 10px;
 
 		nav {
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
-			gap: 120px;
+			padding-right: 10px;
+			gap: 90px;
+
+			dl {
+				dt {
+					font: bold 20px/1 'arial';
+					padding-top: 20px;
+					padding-bottom: 5px;
+					letter-spacing: 0.5px;
+					padding-left: 2px;
+				}
+				dd {
+					font: normal 15px/1 'arial';
+					padding-top: 10px;
+					padding-left: 5px;
+				}
+			}
 		}
 	}
 	.lower {
@@ -30,6 +48,7 @@ footer {
 		.copy {
 			width: 50%;
 			height: 50%;
+			font: bold 20px/1 'arial';
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: left;
@@ -39,10 +58,13 @@ footer {
 		.sns {
 			width: 50%;
 			height: 50%;
+			font-size: 25px;
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: right;
-			padding-top: 20px;
+			padding-top: 10px;
+			padding-bottom: 30px;
+			gap: 20px;
 		}
 	}
 }

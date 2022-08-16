@@ -31,7 +31,7 @@ function Department() {
 					</div>
 				</article>
 			))}
-			<p>Department</p>
+			{/* <p>Department</p> */}
 		</Layout>
 	);
 }

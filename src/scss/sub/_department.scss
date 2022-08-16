@@ -1,0 +1,74 @@
+.Department {
+	> .inner {
+		&::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		article {
+			width: 280px;
+			float: left;
+			margin: 10px;
+			padding: 10px;
+			margin-bottom: 30px;
+			background: #b0cdf4;
+			border: 1px solid black;
+
+			.inner {
+				width: 100%;
+
+				.picFrame {
+					width: 100%;
+					height: 20vw;
+					position: relative;
+					margin-bottom: 10px;
+
+					.reflect {
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						transition: 0.5s;
+						filter: blur(15px) saturate(1.6);
+						transform: translate(0px, 0px) scale(0.9);
+						opacity: 0;
+
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+					.pic {
+						width: 100%;
+						height: 100%;
+						background: #111;
+						position: absolute;
+						top: 0;
+						left: 0;
+						filter: saturate(0.2);
+						transition: 0.5s;
+
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+
+					&:hover {
+						.reflect {
+							opacity: 0.6;
+							transform: translate(30px, 30px) scale(0.9);
+						}
+						.pic {
+							filter: saturate(1.2);
+						}
+					}
+				}
+			}
+		}
+	}
+}
