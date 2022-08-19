@@ -1,6 +1,11 @@
 import Layout from '../common/Layout';
 import { useEffect, useRef, useState } from 'react';
 
+//
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//브랜드 로고 (BI, CI) 아이콘 import
+import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
 function Location() {
 	const { kakao } = window;
 
@@ -52,22 +57,79 @@ function Location() {
 
 	return (
 		<Layout name={'Location'}>
-			<div id='map' ref={container}></div>
-			{/*<button
-				onClick={() =>
-					Location.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
-				}>
-				Traffic ON
-			</button>
-			<button
-				onClick={() =>
-					Location.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
-				}>
-				Traffic OFF
-			</button>*/}
-			<button onClick={() => setTraffic(!Traffic)}>
-				{Traffic ? 'Traffic OFF' : 'Traffic ON'}
-			</button>
+			<div className='upper'>
+				<article className='txtLeft'>
+					<h2>CONTATCT</h2>
+					<h1>GET IN TOUCH</h1>
+					<span>Lorem ipsum dolor sit.</span>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
+						recusandae?
+					</p>
+				</article>
+
+				<article className='mapRight'>
+					<div id='map' ref={container}></div>
+					<button onClick={() => setTraffic(!Traffic)}>
+						{Traffic ? 'Traffic OFF' : 'Traffic ON'}
+					</button>
+				</article>
+			</div>
+
+			<div className='lower'>
+				<article className='firstTxt'>
+					<div className='wrap'>
+						<h1>DIRECT CONTACT</h1>
+						<ul className='address'>
+							<li>
+								<strong>address</strong>
+							</li>
+							<li>PO / Lorem, ipsum dolor.</li>
+							<li>Lorem ipsum dolor sit amet.</li>
+						</ul>
+						<ul className='contact'>
+							<li>
+								<strong>tel:</strong> +01 2345 6789
+							</li>
+							<li>
+								<strong>mail:</strong> decode@email.com
+							</li>
+						</ul>
+						<ul className='sns'>
+							<li>
+								<FontAwesomeIcon icon={faTwitter} />
+							</li>
+							<li>
+								<FontAwesomeIcon icon={faFacebook} />
+							</li>
+						</ul>
+					</div>
+				</article>
+
+				<article className='secondTxt'>
+					<div className='wrap'>
+						<h1>MEDIA CONTACT</h1>
+						<h2>Lorem, ipsum dolor.</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+							Voluptatem error qui quos repudiandae excepturi, voluptatibus ipsa
+							minima quo!
+						</p>
+					</div>
+				</article>
+
+				<article className='thirdTxt'>
+					<div className='wrap'>
+						<h1>BETTER TOGETHER</h1>
+						<h2>JOBS</h2>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+							laudantium ratione pariatur tempore porro accusamus?
+						</p>
+					</div>
+				</article>
+			</div>
+
 			{/* 삼항연산자로 코드 간소화 */}
 		</Layout>
 	);
