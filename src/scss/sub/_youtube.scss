@@ -1,5 +1,73 @@
 .Youtube {
+	.inner {
+		background: #d2bda2;
+
+		//#E5DED4 article 안 컬러
+	}
 	article {
+		width: 50%;
+		height: 280px;
+		margin: 10px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		background: #e5ded4;
+		border: 1px solid black;
+
+		.pic {
+			width: 45%;
+			height: 38vh;
+			padding: 5px;
+			display: flex;
+			// flex-wrap: wrap;
+			// justify-content: space-between;
+			position: relative;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.fa-youtube {
+				font-size: 35px;
+				color: #fff;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			&:hover {
+				filter: saturate(1.2);
+			}
+		}
+	}
+
+	.rightTxt {
+		width: 55%;
+
+		h2 {
+			font: bold 22px/1 black;
+			padding-top: 5px;
+		}
+		.txt {
+			width: 100%;
+			padding-top: 45px;
+		}
+		p {
+			font: normal 15px/1 black;
+		}
+		h3 {
+			font: bold 18px/1 black;
+			text-align: right;
+			padding-right: 5px;
+			padding-top: 70px;
+		}
+	}
+}
+
+/*article {
 		border-top: 1px solid #aaa;
 		padding: 20px 0px;
 		display: flex;
@@ -55,5 +123,4 @@
 				filter: saturate(1.2);
 			}
 		}
-	}
-}
+	}*/
