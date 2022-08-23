@@ -1,5 +1,5 @@
 import Layout from '../common/Layout';
-import Pop from '../common/Pop';
+//import Pop from '../common/Pop';
 import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,8 +8,10 @@ import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 function Youtube() {
 	const line = useRef(null);
 	const [Vids, setVids] = useState([]);
-	const [Open, setOpen] = useState(false);
+	//const [Open, setOpen] = useState(false);
 	const [Index, setIndex] = useState(0);
+
+	const [Play, playVids] = useState([0]);
 
 	useEffect(() => {
 		const key = 'AIzaSyDL7eLWDUNhyCoKpLo1Zllo0Ci2oYZNVj8';
@@ -30,6 +32,18 @@ function Youtube() {
 	return (
 		<>
 			<Layout name={'Youtube'}>
+				<div className='playBox'>
+					<div className='pBox'>
+						<Play playVids={playVids}>
+							({/*함수용 괄호*/}
+							<iframe
+								src={`https://www.youtube.com/embed/${Vids[Index].snippet.resourceId.videoId}`}
+								frameBorder='0'></iframe>
+							)
+						</Play>
+					</div>
+				</div>
+
 				{Vids.map((vid, idx) => (
 					<article key={vid.id}>
 						<div className='pic'>
@@ -38,7 +52,7 @@ function Youtube() {
 								icon={faYoutube}
 								ref={line}
 								onClick={() => {
-									setOpen(true);
+									//setOpen(true);
 									setIndex(idx);
 								}}
 							/>
@@ -46,31 +60,33 @@ function Youtube() {
 
 						<div className='rightTxt'>
 							<h2>
-								{vid.snippet.title.length > 40
-									? vid.snippet.title.substr(0, 40) + '...'
+								{vid.snippet.title.length > 100
+									? vid.snippet.title.substr(0, 100) + '...'
 									: vid.snippet.title}
 							</h2>
 
 							<div className='txt'>
 								<p>
-									{vid.snippet.description.length > 30
-										? vid.snippet.description.substr(0, 60) + '...'
+									{vid.snippet.description.length > 200
+										? vid.snippet.description.substr(0, 200) + '...'
 										: vid.snippet.description}
 								</p>
-								<h3>{vid.snippet.publishedAt.split('T')[0]}</h3>
+								<div className='cal'>
+									<h3>{vid.snippet.publishedAt.split('T')[0]}</h3>
+								</div>
 							</div>
 						</div>
 					</article>
 				))}
 			</Layout>
 
-			{Open && (
+			{/* {Open && (
 				<Pop setOpen={setOpen}>
 					<iframe
 						src={`https://www.youtube.com/embed/${Vids[Index].snippet.resourceId.videoId}`}
 						frameBorder='0'></iframe>
 				</Pop>
-			)}
+			)} */}
 		</>
 	);
 }
