@@ -1,5 +1,5 @@
 import Layout from '../common/Layout';
-//import Pop from '../common/Pop';
+import Pop from '../common/Pop';
 import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,10 +8,8 @@ import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 function Youtube() {
 	const line = useRef(null);
 	const [Vids, setVids] = useState([]);
-	//const [Open, setOpen] = useState(false);
+	const [Open, setOpen] = useState(false);
 	const [Index, setIndex] = useState(0);
-
-	const [Play, playVids] = useState([0]);
 
 	useEffect(() => {
 		const key = 'AIzaSyDL7eLWDUNhyCoKpLo1Zllo0Ci2oYZNVj8';
@@ -32,18 +30,6 @@ function Youtube() {
 	return (
 		<>
 			<Layout name={'Youtube'}>
-				<div className='playBox'>
-					<div className='pBox'>
-						<Play playVids={playVids}>
-							({/*함수용 괄호*/}
-							<iframe
-								src={`https://www.youtube.com/embed/${Vids[Index].snippet.resourceId.videoId}`}
-								frameBorder='0'></iframe>
-							)
-						</Play>
-					</div>
-				</div>
-
 				{Vids.map((vid, idx) => (
 					<article key={vid.id}>
 						<div className='pic'>
@@ -52,7 +38,7 @@ function Youtube() {
 								icon={faYoutube}
 								ref={line}
 								onClick={() => {
-									//setOpen(true);
+									setOpen(true);
 									setIndex(idx);
 								}}
 							/>
@@ -80,13 +66,13 @@ function Youtube() {
 				))}
 			</Layout>
 
-			{/* {Open && (
+			{Open && (
 				<Pop setOpen={setOpen}>
 					<iframe
 						src={`https://www.youtube.com/embed/${Vids[Index].snippet.resourceId.videoId}`}
 						frameBorder='0'></iframe>
 				</Pop>
-			)} */}
+			)}
 		</>
 	);
 }

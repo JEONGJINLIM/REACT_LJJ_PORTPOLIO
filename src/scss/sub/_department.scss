@@ -1,5 +1,7 @@
 .Department {
 	> .inner {
+		background: #e5ded4;
+
 		&::after {
 			content: '';
 			display: block;
@@ -7,22 +9,58 @@
 		}
 
 		article {
-			width: 280px;
+			width: 45%;
 			float: left;
 			margin: 10px;
 			padding: 10px;
 			margin-bottom: 30px;
-			background: #b0cdf4;
 			border: 1px solid black;
+			background: #efefef;
+
+			&:nth-of-type(1) {
+				width: 100%;
+				height: 100%;
+			}
+			&:nth-of-type(2) {
+				width: 48%;
+				height: 90%;
+			}
+			&:nth-of-type(3) {
+				width: 47%;
+				height: 80%;
+				margin-top: 100px;
+			}
+
+			&:nth-of-type(4) {
+				width: 48%;
+				height: 80%;
+			}
+			&:nth-of-type(5) {
+				width: 47%;
+				height: 80%;
+				margin-top: 100px;
+			}
+
+			&:nth-of-type(6) {
+				width: 48%;
+			}
+
+			.intro {
+				width: 30%;
+				height: 100%;
+				float: left;
+			}
 
 			.inner {
 				width: 100%;
+				display: relative;
 
 				.picFrame {
-					width: 100%;
-					height: 20vw;
+					width: 35%;
+					height: 12vw;
 					position: relative;
 					margin-bottom: 10px;
+					float: left;
 
 					.reflect {
 						width: 100%;
@@ -46,6 +84,7 @@
 						height: 100%;
 						background: #111;
 						position: absolute;
+
 						top: 0;
 						left: 0;
 						filter: saturate(0.2);
@@ -66,6 +105,20 @@
 						.pic {
 							filter: saturate(1.2);
 						}
+					}
+				}
+				.intro {
+					width: 65%;
+					height: 100%;
+					padding: 10px;
+					padding-top: 25px;
+					float: left;
+
+					h2 {
+						font: bold 30px/1;
+					}
+					h1 {
+						padding-top: 15px;
 					}
 				}
 			}

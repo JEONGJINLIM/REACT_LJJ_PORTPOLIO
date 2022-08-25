@@ -25,9 +25,17 @@ function Department() {
 								<img src={`${path}/img/${member.pic}`} alt={member.name} />
 							</div>
 						</div>
+						<div className='intro'>
+							<h2>{member.name}</h2>
+							<p>{member.position}</p>
 
-						<h2>{member.name}</h2>
-						<p>{member.position}</p>
+							<h1>introduce</h1>
+							<p>
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit. A,
+								quasi dolore? Odit, delectus corrupti. Autem praesentium animi
+								facere ex explicabo!
+							</p>
+						</div>
 					</div>
 				</article>
 			))}
