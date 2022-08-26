@@ -1,4 +1,9 @@
 .Youtube {
+	video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 	.inner {
 		background: #d2bda2;
 		display: flex;

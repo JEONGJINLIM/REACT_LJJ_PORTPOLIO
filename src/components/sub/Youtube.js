@@ -30,6 +30,13 @@ function Youtube() {
 	return (
 		<>
 			<Layout name={'Youtube'}>
+				<figure id='youtube' className='myScroll'>
+					<video
+						src={process.env.PUBLIC_URL + '/img/teaCup.mp4'}
+						loop
+						muted
+						autoPlay></video>
+				</figure>
 				{Vids.map((vid, idx) => (
 					<article key={vid.id}>
 						<div className='pic'>

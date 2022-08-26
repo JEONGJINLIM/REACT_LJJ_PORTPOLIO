@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvira } from '@fortawesome/free-brands-svg-icons';
+import Menu from './Menu';
 
 function Header({ type }) {
 	const active = { color: '#7BF02E' };
@@ -52,6 +52,7 @@ function Header({ type }) {
 					</li>
 				</ul>
 			</nav>
+			<Menu />
 		</header>
 	);
 }

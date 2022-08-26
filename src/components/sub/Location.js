@@ -57,6 +57,13 @@ function Location() {
 
 	return (
 		<Layout name={'Location'}>
+			<figure id='location' className='myScroll'>
+				<video
+					src={process.env.PUBLIC_URL + '/img/teaCup.mp4'}
+					loop
+					muted
+					autoPlay></video>
+			</figure>
 			<div className='upper'>
 				<article className='txtLeft'>
 					<h2>CONTATCT</h2>

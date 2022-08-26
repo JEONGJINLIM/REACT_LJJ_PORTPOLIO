@@ -114,6 +114,13 @@ function Members() {
 
 	return (
 		<Layout name={'Members'}>
+			<figure id='members' className='myScroll'>
+				<video
+					src={process.env.PUBLIC_URL + '/img/teaCup.mp4'}
+					loop
+					muted
+					autoPlay></video>
+			</figure>
 			<form onSubmit={handleSubmit}>
 				<fieldset>
 					<legend>회원가입 폼 양식</legend>

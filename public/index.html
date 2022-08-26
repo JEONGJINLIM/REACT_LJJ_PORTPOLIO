@@ -7,11 +7,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>React App</title>
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a5d67f046595e3f11fefa6a194f4a265"></script>
+  <!-- <style>
+    .defaults {
+      position: absolute;
+      top: -999999px;
+    }
+
+    .mask {
+      width: 100%;
+      height: 100vh;
+      background: #111;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      opacity: 1;
+      transition: opacity 2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font: 20px/1 'arial';
+      color: #fff;
+    }
+
+    .mask.off {
+      opacity: 0;
+    }
+  </style> -->
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
+  <!-- 
+  <div class="defaults"></div>
+  <div class="mask">LOADING...</div>
+  <script>
+    const defaults = document.querySelector('.defaults');
+    const mask = document.querySelector('.mask');
+    let tags = '';
+    const baseURL = 'https://jeongjinlim.github.io/REACT_LJJ_PORTPOLIO';
+    const imgs = [
+      baseURL + '/img/vid.mp4',
+      baseURL + '/img/vid.mp4',
+      baseURL + '/img/vid.mp4',
+      baseURL + '/img/vid.mp4',
+      baseURL + '/img/vid.mp4',
+      baseURL + '/img/vid.mp4'
+    ];//?? 뭐지 배열로 받네 이걸
+
+    const vids = [
+      baseURL + '/img/flowerVid.mp4'
+    ];
+
+    const lenImg = imgs.length;
+    const lenVid = vids.length;
+
+    createDOM();
+    console.log(createDOM)
+
+    Promise.all([loadImg(), loadVid()]).then(result => {
+      console.log(result); //[true, true]
+      const [loadedImg, loadedVid] = result;
+
+      //두함수의 반환값이 모두 true이면 (영상, 이미지가 모두 로딩완료되면)
+      if (loadedImg && loadedVid) {
+        console.log('mask-hide');
+        mask.classList.add('off');
+
+        setTimeout(() => {
+          mask.remove();
+          defaults.remove();
+        }, 2000)
+      }
+    })
+
+
+    function createDOM() {
+      imgs.forEach(src => {
+        tags += `<img src=${src}/>`
+      })
+      vids.forEach(src => {
+        tags += `<video src=${src}></video>`
+      })
+      defaults.innerHTML = tags;
+    }
+    function loadImg() {
+      return new Promise((res, rej) => {
+        let countImg = 0;
+        const imgDOM = defaults.querySelectorAll('img');
+
+        imgDOM.forEach(img => {
+          img.onload = () => {
+            countImg++;
+            console.log('img loaded..', countImg);
+            if (countImg === lenImg) {
+              res(true);
+            }
+          }
+        })
+      })
+    }
+    function loadVid() {
+      return new Promise((res, rej) => {
+        let countVid = 0;
+        const vidDOM = defaults.querySelectorAll('video');
+
+        vidDOM.forEach(vid => {
+          vid.onloadeddata = () => {
+            countVid++;
+            console.log('video loaded..', countVid);
+            if (countVid === lenVid) {
+              res(true);
+            }
+          }
+        })
+      })
+    }
+  </script> -->
 </body>
+
 
 </html>

@@ -89,6 +89,13 @@ function Gallery() {
 	return (
 		<>
 			<Layout name={'Gallery'}>
+				<figure id='gallery' className='myScroll'>
+					<video
+						src={process.env.PUBLIC_URL + '/img/teaCup.mp4'}
+						loop
+						muted
+						autoPlay></video>
+				</figure>
 				<button user={user} onClick={showUser}>
 					My Gallery
 				</button>

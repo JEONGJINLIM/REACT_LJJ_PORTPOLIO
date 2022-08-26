@@ -1,7 +1,12 @@
 .Department {
 	> .inner {
-		background: #e5ded4;
+		background: #e9dac1;
 
+		video {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 		&::after {
 			content: '';
 			display: block;
@@ -15,7 +20,19 @@
 			padding: 10px;
 			margin-bottom: 30px;
 			border: 1px solid black;
-			background: #efefef;
+			background: #fbf8f1;
+
+			.sns {
+				width: 100%;
+				height: 100%;
+				font-size: 25px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: right;
+				gap: 10px;
+				padding: 10% 0 0 0;
+				cursor: pointer;
+			}
 
 			&:nth-of-type(1) {
 				width: 100%;
@@ -28,7 +45,7 @@
 			&:nth-of-type(3) {
 				width: 47%;
 				height: 80%;
-				margin-top: 100px;
+				margin-top: 130px;
 			}
 
 			&:nth-of-type(4) {
@@ -38,7 +55,7 @@
 			&:nth-of-type(5) {
 				width: 47%;
 				height: 80%;
-				margin-top: 100px;
+				margin-top: 130px;
 			}
 
 			&:nth-of-type(6) {
@@ -57,7 +74,7 @@
 
 				.picFrame {
 					width: 35%;
-					height: 12vw;
+					height: 22vw;
 					position: relative;
 					margin-bottom: 10px;
 					float: left;
