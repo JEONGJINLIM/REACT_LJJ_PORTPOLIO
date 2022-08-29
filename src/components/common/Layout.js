@@ -9,8 +9,9 @@ function Layout({ children, name }) {
 
 	return (
 		<section className={`content ${name}`} ref={frame}>
-			<figure></figure>
-
+			<div className='title'>
+				<h1>{name}</h1>
+			</div>
 			<div className='inner'>{children}</div>
 		</section>
 	);

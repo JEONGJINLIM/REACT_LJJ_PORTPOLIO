@@ -7,6 +7,8 @@ function Community() {
 	const inputEdit = useRef(null);
 	const textareaEdit = useRef(null);
 
+	const frame = useRef(null);
+
 	const getLocalData = () => {
 		const dummyPosts = [
 			{ title: 'Hello5', content: 'Here comes description in detail.' },
@@ -98,8 +100,17 @@ function Community() {
 		localStorage.setItem('post', JSON.stringify(Posts));
 	}, [Posts]);
 
+	// useEffect(() => {
+	// 	frame.current.classList.add('on');
+	// }, []);
+	// console.log(frame);
 	return (
 		<Layout name={'Community'}>
+			{/* .Community{
+				width:100%;
+				height:100%;
+
+			} */}
 			<div className='inputBox'>
 				<input type='text' placeholder='제목을 입력하세요' ref={input} />
 				<br />
@@ -114,7 +125,6 @@ function Community() {
 					<button onClick={createPost}>WRITE</button>
 				</div>
 			</div>
-
 			<div className='showBox'>
 				{Posts.map((post, idx) => {
 					return (

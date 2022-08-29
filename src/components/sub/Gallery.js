@@ -150,7 +150,7 @@ function Gallery() {
 				{Loading && (
 					<img
 						className='loading'
-						src={process.env.PUBLIC_URL + '/img/loading.gif'}
+						src={process.env.PUBLIC_URL + '/img/greenLoadingunscreen.gif'}
 					/>
 				)}
 
